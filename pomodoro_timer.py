@@ -5,8 +5,20 @@ import time
 from tkinter import Button
 from popup_box import pomodoro_popup
 
-cycle_minutes = int(input("How many minutes for each Pomodoro round? "))
-break_minutes = int(input("How many minutes for each break between rounds? "))
+while True:
+	try:
+		cycle_minutes = int(input("How many minutes for each Pomodoro round? "))
+		break
+	except ValueError:
+		print("Please enter a numerical value with no decimals.")
+
+while True:
+	try:
+		break_minutes = int(input("How many minutes for each break between rounds? "))
+		break
+	except ValueError:
+		print("Please enter a numerical value with no decimals.")
+
 #cycle_seconds = cycle_minutes * 60
 break_seconds = break_minutes * 60
 cycle_counter = cycle_minutes*60
